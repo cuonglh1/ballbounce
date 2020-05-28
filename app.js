@@ -11,7 +11,7 @@ var dx = Math.floor(Math.random() * 10) + 1; //movement horizonal
 var dy = Math.floor(Math.random() * 10) + 1; //vertical movement
 
 document.addEventListener('keydown', function(event) {
-
+    // press 1 to increase speed
     if (event.key == 1) {
 
         clearInterval(a);
@@ -20,7 +20,7 @@ document.addEventListener('keydown', function(event) {
         a = setInterval(loop, time);
 
     }
-
+    //press 2 to decrease speed
     if (event.key == 2) {
         clearInterval(a);
         time += 20;
@@ -72,8 +72,8 @@ var context = document.querySelector("canvas").getContext("2d");
 
 var balls = new Array();
 
-let x = document.documentElement.clientWidth * Math.random();
-let y = document.documentElement.clientHeight * Math.random();
+let x = document.documentElement.clientWidth * Math.random(); //random movement horizonal
+let y = document.documentElement.clientHeight * Math.random(); //random movement vertical
 
 for (let index = 0; index < 1; index++) {
 
