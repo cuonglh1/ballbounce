@@ -31,22 +31,30 @@ document.addEventListener('keydown', function(event) {
 });
 Ball.prototype = {
 
+
     updatePosition: function(width, height) {
 
-        this.x = this.x + dx;
-        this.y = this.y + dy;
+        this.x = this.x + dx; //Update position horizontally
+        this.y = this.y + dy; //Update postion vertically
+
+
+        //x:horizontal ball coordinates
+        //y:vertical ball coordinates
+        //radius:radius of ball
+        //width:width of screen  
+        //height:hieght of screen 
 
         if (this.x - this.radius < 0) {
-
             this.x = this.radius;
             dx = -dx;
-            this.x = this.x + dx;
+            this.x = this.x + dx; //increase horizontal ball coordinates
+
 
         } else if (this.x + this.radius > width) {
 
             this.x = width - this.radius;
             dx = -dx;
-            this.x += dx;
+            this.x += dx; //decrease horizontal ball coordinates
 
         }
 
@@ -54,13 +62,13 @@ Ball.prototype = {
 
             this.y = this.radius;
             dy = -dy;
-            this.y = this.y + dy;
+            this.y = this.y + dy; //increase vertical ball coordinates
 
         } else if (this.y + this.radius > height) {
 
             this.y = height - this.radius;
             dy = -dy;
-            this.y = this.y + dy;
+            this.y = this.y + dy; //decrease vertical ball coordinates
 
         }
 
@@ -72,8 +80,8 @@ var context = document.querySelector("canvas").getContext("2d");
 
 var balls = new Array();
 
-let x = document.documentElement.clientWidth * Math.random(); //random movement horizonal
-let y = document.documentElement.clientHeight * Math.random(); //random movement vertical
+let x = document.documentElement.clientWidth * Math.random(); //random movement horizontal first
+let y = document.documentElement.clientHeight * Math.random(); //random movement vertical first
 
 for (let index = 0; index < 1; index++) {
 
